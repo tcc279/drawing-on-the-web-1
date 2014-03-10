@@ -7,9 +7,9 @@
 		<title>CSS3 Cube</title>
 		<style>
 			.container {
-				width: 200px;
+				width: 400px;
 				margin: auto;
-				margin-top: 200px;
+				margin-top: 400px;
 				perspective: 600px;
 				-webkit-perspective: 600px;
 				perspective-origin: 100px 100px;
@@ -28,11 +28,11 @@
 			.cube, .cube2, .cube3, .cube4, .cube5 {
 				position: relative;
 				width: 200px;
-				opacity: 0.7;
+				opacity: 1.0;
 				transform-style: preserve-3d;
 				-webkit-transform-style: preserve-3d;
-				animation: spin 4s;
-				-webkit-animation: spin 4s;
+				animation: spin 8s;
+				-webkit-animation: spin 8s;
 				animation-iteration-count: infinite;
 				-webkit-animation-iteration-count: infinite;
 				animation-timing-function: linear;
@@ -77,6 +77,8 @@
 				width: 200px;
 				height: 200px;
 			}
+			
+		
 
 			@keyframes spin {
 				from {transform: rotateY(0deg);}
@@ -89,13 +91,27 @@
 			}
 
 			.back {
-				background-color: red;
+				background-color: black;
+				transform: translateZ(-100px) rotateY(180deg);
+				-webkit-transform: translateZ(-100px) rotateY(180deg);
+			}
+
+			.backleft {
+				background-image: url(earth_left.jpg);
+				background-size:200px 200px;
+				transform: translateZ(-100px) rotateY(180deg);
+				-webkit-transform: translateZ(-100px) rotateY(180deg);
+			}
+
+			.backright {
+				background-image: url(earth_right.jpg);
+				background-size:200px 200px;
 				transform: translateZ(-100px) rotateY(180deg);
 				-webkit-transform: translateZ(-100px) rotateY(180deg);
 			}
 
 			.right {
-				background-color: orange;
+				background-color: black;
 				transform: rotateY(-270deg) translateX(100px);
 				-webkit-transform: rotateY(-270deg) translateX(100px);
 				transform-origin: top right;
@@ -103,7 +119,7 @@
 			}
 
 			.left {
-				background-color: yellow;
+				background-color: black;
 				transform: rotateY(270deg) translateX(-100px);
 				-webkit-transform: rotateY(270deg) translateX(-100px);
 				transform-origin: center left;
@@ -111,7 +127,7 @@
 			}
 
 			.top {
-				background-color: green;
+				background-color: black;
 				transform: rotateX(-90deg) translateY(-100px);
 				-webkit-transform: rotateX(-90deg) translateY(-100px);
 				transform-origin: top center;
@@ -119,7 +135,7 @@
 			}
 
 			.bottom {
-				background-color: blue;
+				background-color: black;
 				transform: rotateX(90deg) translateY(100px);
 				-webkit-transform: rotateX(90deg) translateY(100px);
 				transform-origin: bottom center;
@@ -127,17 +143,39 @@
 			}
 
 			.front {
-				background-color: purple;
+				background-color: black;
 				transform: translateZ(100px);
 				-webkit-transform: translateZ(100px);
 			}
+
+			.fronttop {
+				background-image: url(earth_top.png);
+				background-size:200px 200px;
+				transform: translateZ(100px);
+				-webkit-transform: translateZ(100px);
+			}
+
+			.frontbot {
+				background-image: url(earth_bot.jpg);
+				background-size:200px 200px;
+				transform: translateZ(100px);
+				-webkit-transform: translateZ(100px);
+			}
+
+			.frontmid {
+				background-image: url(earth_mid.jpg);
+				background-size:200px 200px;
+				transform: translateZ(100px);
+				-webkit-transform: translateZ(100px);
+			}
+				
 		</style>
 	</head>
 
 	<body>
 		<div class="container">
 			<div class="cube">
-				<div class="front"></div>
+				<div class="frontmid"></div>
 				<div class="back"></div>
 				<div class="top"></div>
 				<div class="bottom"></div>
@@ -146,7 +184,7 @@
 			</div>
 
 			<div class="cube2">
-				<div class="front"></div>
+				<div class="fronttop"></div>
 				<div class="back"></div>
 				<div class="top"></div>
 				<div class="bottom"></div>
@@ -155,7 +193,7 @@
 			</div>
 
 			<div class="cube3">
-				<div class="front"></div>
+				<div class="frontbot"></div>
 				<div class="back"></div>
 				<div class="top"></div>
 				<div class="bottom"></div>
@@ -165,7 +203,7 @@
 
 			<div class="cube4">
 				<div class="front"></div>
-				<div class="back"></div>
+				<div class="backright"></div>
 				<div class="top"></div>
 				<div class="bottom"></div>
 				<div class="left"></div>
@@ -174,12 +212,14 @@
 
 			<div class="cube5">
 				<div class="front"></div>
-				<div class="back"></div>
+				<div class="backleft"></div>
 				<div class="top"></div>
 				<div class="bottom"></div>
 				<div class="left"></div>
 				<div class="right"></div>
 			</div>
+			
+			
 		</div>
 	</body>
 
